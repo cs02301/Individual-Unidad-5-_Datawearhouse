@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manual de Usuario para Eclipse BIRT Project – Actividad Individual Unidad 5 Herramientas de Implementación Data Warehouse">
+  <meta name="author" content="Tu Nombre">
+  <title>Manual de Usuario – Eclipse BIRT Project | Data Warehouse</title>
+
+  <!-- Fuentes y Estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2b6cb0;
+      --accent-color: #e2e8f0;
+      --text-main: #2d3748;
+      --bg-body: #f7fafc;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --radius: 12px;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.8;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #2c5282);
+      color: white;
+      padding: 4rem 0 2rem;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2.8rem;
+      margin: 0 0 0.5rem;
+    }
+    header .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    .container {
+      max-width: 1100px;
+      margin: -40px auto 40px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 40px;
+      position: relative;
+      z-index: 10;
+    }
+    .blog-post {
+      background: white;
+      padding: 50px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      color: var(--primary-color);
+      font-family: 'Roboto', sans-serif;
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 10px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 i {
+      color: var(--secondary-color);
+    }
+    h3 {
+      color: #2c5282;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 1.5em;
+      text-align: justify;
+    }
+    ul.check-list {
+      list-style: none;
+      padding: 0;
+    }
+    ul.check-list li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+    }
+    ul.check-list li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+    }
+    .glossary-box {
+      background-color: #ebf8ff;
+      border-left: 4px solid var(--secondary-color);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .glossary-term {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    .bibliography {
+      background-color: #fff;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: var(--radius);
+    }
+    .biblio-item {
+      padding-left: 2em;
+      text-indent: -2em;
+      margin-bottom: 1em;
+    }
+    .sidebar .widget {
+      background: white;
+      padding: 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      position: sticky;
+      top: 20px;
+    }
+    .toc-link {
+      display: block;
+      padding: 8px 0;
+      color: #4a5568;
+      text-decoration: none;
+      border-bottom: 1px solid #edf2f7;
+      transition: color 0.3s, padding-left 0.3s;
+    }
+    .toc-link:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+      }
+      header {
+        padding: 3rem 0 1.5rem;
+      }
+      .blog-post {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+      <h1>Manual de Usuario: Eclipse BIRT Project</h1>
+      <p class="subtitle">Actividad Individual • Unidad 5: Herramientas de Implementación Data Warehouse</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="blog-post" role="main">
+      <!-- Sección Presentación -->
+      <section id="presentacion" aria-labelledby="titulo-presentacion">
+        <h3 id="titulo-presentacion" style="margin-top: 0;">Presentación</h3>
+        <p>Este blog ha sido elaborado como parte de la actividad individual de la Unidad 5. Su propósito es ofrecer un manual técnico y funcional sobre la herramienta <strong>Eclipse BIRT Project</strong>, esencial para la implementación de estrategias de inteligencia de negocio (BI) y de Data Warehouse en entornos organizacionales.</p>
+      </section>
+
+      <!-- Introducción -->
+      <section id="introduccion" aria-labelledby="titulo-introduccion">
+        <h2><i class="fa-solid fa-book-open"></i> Introducción</h2>
+        <p>En el ámbito del Data Warehouse, la generación de informes es el paso clave en que los datos procesados se transforman en información visible y útil para la toma de decisiones. Existen diversas herramientas en el mercado —por ejemplo, <em>Crystal Reports</em>, <em>Jasper Reports</em> o <em>Dynamic Data Web</em>—, pero en esta guía nos centramos en <strong>Eclipse BIRT Project</strong>, una solución de código abierto que se integra de forma potente con aplicaciones Java/Java EE.</p>
+        <p>A lo largo de este manual, exploraremos su arquitectura, funcionalidades, requisitos, configuración, tipos de informes, flujo de uso y un glosario de términos clave. El objetivo es proporcionar una referencia clara para la implementación y uso efectivo de BIRT dentro de proyectos de Data Warehouse o BI.</p>
+      </section>
+
+      <!-- Desarrollo -->
+      <section id="desarrollo" aria-labelledby="titulo-desarrollo">
+        <h2><i class="fa-solid fa-laptop-code"></i> Desarrollo de la Actividad</h2>
+
+        <article id="descripcion" aria-labelledby="titulo-descripcion">
+          <h3 id="titulo-descripcion">Descripción de la Herramienta</h3>
+          <p><strong>Eclipse BIRT (Business Intelligence and Reporting Tools)</strong> es un proyecto de código abierto de la Eclipse Foundation, orientado a proveer capacidades de informes e inteligencia de negocio para aplicaciones cliente pesado (rich clients) y web, especialmente aquellas basadas en Java/Java EE. :contentReference[oaicite:1]{index=1}</p>
+          <p>Cuenta con dos componentes principales: un diseñador visual de informes integrado en el IDE Eclipse, y un motor de ejecución (“report engine”) que puede desplegarse en aplicaciones web o servidores Java. Esta estructura permite generar informes que combinan datos, tablas, gráficos y exportaciones en múltiples formatos. :contentReference[oaicite:2]{index=2}</p>
+        </article>
+
+        <article id="funcionalidades" aria-labelledby="titulo-funcionalidades">
+          <h3 id="titulo-funcionalidades">Funcionalidades Principales</h3>
+          <p>Entre las capacidades más destacadas de BIRT se encuentran:</p>
+          <ul class="check-list">
+            <li><strong>Diseño visual “arrastrar-soltar”</strong> de tablas, gráficos, listas, crosstabs y documentos. :contentReference[oaicite:3]{index=3}</li>
+            <li><strong>Acceso a múltiples fuentes de datos</strong>: JDBC, archivos planos, web services, XML, POJOs, etc. :contentReference[oaicite:4]{index=4}</li>
+            <li><strong>Vista previa y exportación</strong> de informes en formatos como HTML, PDF, XLS/XLSX, DOC, PPT. :contentReference[oaicite:5]{index=5}</li>
+            <li><strong>Reutilización de componentes</strong> a través de librerías (*.rptlibrary) y plantillas, que facilitan consistencia y mantenimiento. :contentReference[oaicite:6]{index=6}</li>
+            <li><strong>Integración con aplicaciones Java/Java EE</strong>, permitiendo la generación programática de informes desde el backend. :contentReference[oaicite:7]{index=7}</li>
+          </ul>
+        </article>
+
+        <article id="uso" aria-labelledby="titulo-uso">
+          <h3 id="titulo-uso">Uso de la Herramienta (Flujo de Trabajo)</h3>
+          <p>El uso típico de BIRT sigue este flujo estructurado:</p>
+          <ol>
+            <li><strong>Conexión de datos:</strong> usando ODA (Open Data Access) para configurar fuentes heterogéneas. :contentReference[oaicite:8]{index=8}</li>
+            <li><strong>Transformación de datos:</strong> filtrado, agrupaciones, cálculos previos a la visualización.</li>
+            <li><strong>Lógica de negocio:</strong> uso de scripts JavaScript o clases Java para lógica compleja.</li>
+            <li><strong>Presentación:</strong> diseño de elementos visuales, tablas, gráficos, disposición final.</li>
+          </ol>
+        </article>
+
+        <article id="requisitos" aria-labelledby="titulo-requisitos">
+          <h3 id="titulo-requisitos">Requisitos y Configuración</h3>
+          <p>Para instalar y ejecutar BIRT, considera los siguientes elementos:</p>
+          <ul>
+            <li><strong>Entorno Java/JDK:</strong> BIRT está basado en Java, así que debe instalarse un JDK compatible.</li>
+            <li><strong>Diseñador de Informes:</strong> puede instalarse como plugin en un IDE Eclipse existente o como aplicación independiente (RCP). :contentReference[oaicite:9]{index=9}</li>
+            <li><strong>Motor de Ejecución (Report Engine):</strong> se debe desplegar en un servidor web/Java (por ejemplo Apache Tomcat), junto con los jars de BIRT. :contentReference[oaicite:11]{index=11}</li>
+            <li><strong>Fuente(s) de datos:</strong> conexión(s) configuradas para recuperar los datos necesarios.</li>
+          </ul>
+        </article>
+
+        <article id="tipos" aria-labelledby="titulo-tipos">
+          <h3 id="titulo-tipos">Tipos de Informes y Generación</h3>
+          <p>La herramienta permite construir distintos tipos de informes:</p>
+          <ul>
+            <li><strong>Informes tabulares simples:</strong> listados, facturas, documentos detallados.</li>
+            <li><strong>Dashboards gráficos:</strong> barras, líneas, tortas, medidores.</li>
+          </ul>
+          <p><strong>Formatos de salida:</strong> HTML, HTML paginado, PDF, XLS/XLSX, DOC, PPT y más. :contentReference[oaicite:12]{index=12}</p>
+        </article>
+
+        <article id="generar" aria-labelledby="titulo-generar">
+          <h3 id="titulo-generar">Cómo Generar Informes</h3>
+          <p>Pasos básicos para generar un informe en BIRT:</p>
+          <ol>
+            <li>Abrir Eclipse y cambiar a la perspectiva “Report Design”.</li>
+            <li>Crear un nuevo proyecto de informes y archivo <code>.rptdesign</code>. :contentReference[oaicite:13]{index=13}</li>
+            <li>Definir la fuente de datos (Data Source) y el conjunto de datos (Data Set).</li>
+            <li>Arrastrar el Data Set al lienzo de diseño para construir una tabla o gráfico.</li>
+            <li>Insertar elementos desde la paleta: tablas, gráficos, etiquetas según requerimiento.</li>
+            <li>Ejecutar la vista previa (“Preview”) para validar el diseño.</li>
+            <li>Exportar o desplegar el informe al formato deseado (PDF, HTML, etc.).</li>
+          </ol>
+        </article>
+
+      </section>
+
+      <!-- Glosario -->
+      <section id="glosario" aria-labelledby="titulo-glosario">
+        <h2><i class="fa-solid fa-spell-check"></i> Glosario</h2>
+        <div class="glossary-box">
+          <p><span class="glossary-term">EPL (Eclipse Public License):</span> Licencia de software de código abierto bajo la cual opera BIRT. :contentReference[oaicite:14]{index=14}</p>
+          <p><span class="glossary-term">ODA (Open Data Access):</span> Marco que permite a BIRT acceder múltiples fuentes de datos heterogéneas. :contentReference[oaicite:15]{index=15}</p>
+          <p><span class="glossary-term">RCP (Rich Client Platform):</span> Plataforma que permite ejecutar el diseñador BIRT como aplicación de escritorio independiente.</p>
+          <p><span class="glossary-term">Design Engine API (DE):</span> API de diseño usada para construir/modificar informes en BIRT.</p>
+          <p><span class="glossary-term">Apache Tomcat:</span> Contenedor de servlets Java frecuentemente usado para desplegar el visor de BIRT.</p>
+        </div>
+      </section>
+
+      <!-- Conclusiones -->
+      <section id="conclusiones" aria-labelledby="titulo-conclusiones">
+        <h2><i class="fa-solid fa-lightbulb"></i> Conclusiones</h2>
+        <p>El proyecto <strong>Eclipse BIRT Project</strong> se posiciona como una herramienta clave en la fase de implementación de un Data Warehouse. Gracias a su enfoque de separación entre lógica de datos y presentación, permite a las organizaciones automatizar la generación de informes complejos de forma eficiente. Su naturaleza de código abierto y su integración con el ecosistema Java brindan ventajas frente a soluciones propietarias, permitiendo una integración profunda en los sistemas empresariales existentes para respaldar la toma de decisiones basada en datos.</p>
+      </section>
+
+      <!-- Bibliografía -->
+      <section id="bibliografia" aria-labelledby="titulo-bibliografia">
+        <h2><i class="fa-solid fa-bookmark"></i> Bibliografía</h2>
+        <div class="bibliography">
+          <div class="biblio-item">Eclipse Foundation. (s. f.). <em>Eclipse BIRT™ (Business Intelligence and Reporting Tools)</em>. Recuperado de <a href="https://projects.eclipse.org/projects/technology.birt" target="_blank" rel="noopener">https://projects.eclipse.org/projects/technology.birt</a></div>
+          <div class="biblio-item">IBM®. (s. f.). <em>Tips for designing model reports using BIRT</em>. Recuperado de <a href="https://www.ibm.com/docs/en/dma?topic=designs-tips-designing-model-reports" target="_blank" rel="noopener">https://www.ibm.com/docs/en/dma?topic=designs-tips-designing-model-reports</a> :contentReference[oaicite:16]{index=16}</div>
+          <div class="biblio-item">Mahmood, M. A. (s. f.). <em>Manual & guide for BIRT Eclipse Report Designer</em> [Presentación]. SlideShare. Recuperado de <a href="https://www.slideshare.net/slideshow/manual-guide-for-birt-eclipse-report-designer/11915886" target="_blank" rel="noopener">https://www.slideshare.net/slideshow/manual-guide-for-birt-eclipse-report-designer/11915886</a> :contentReference[oaicite:17]{index=17}</div>
+          <div class="biblio-item">Silberschatz, A. (2006). <em>Fundamentos de bases de datos</em> (5ª ed.). McGraw-Hill España.</div>
+          <div class="biblio-item">Universidad Católica de Colombia. (s. f.). <em>Unidad 5: Herramientas de Implementación Data Warehouse</em> [Material de curso].</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Sidebar de Navegación -->
+    <aside class="sidebar" role="complementary">
+      <div class="widget">
+        <h3 style="margin-top:0; border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px;">Tabla de Contenido</h3>
+        <nav aria-label="Índice del manual">
+          <a href="#presentacion" class="toc-link">Presentación</a>
+          <a href="#introduccion" class="toc-link">1. Introducción</a>
+          <a href="#desarrollo" class="toc-link">2. Desarrollo</a>
+            <a href="#descripcion" class="toc-link" style="margin-left: 15px;">• Descripción</a>
+            <a href="#funcionalidades" class="toc-link" style="margin-left: 15px;">• Funcionalidades</a>
+            <a href="#uso" class="toc-link" style="margin-left: 15px;">• Uso y Flujo</a>
+            <a href="#requisitos" class="toc-link" style="margin-left: 15px;">• Requisitos y Configuración</a>
+            <a href="#tipos" class="toc-link" style="margin-left: 15px;">• Tipos de Informes</a>
+            <a href="#generar" class="toc-link" style="margin-left: 15px;">• Cómo Generar</a>
+          <a href="#glosario" class="toc-link">3. Glosario</a>
+          <a href="#conclusiones" class="toc-link">4. Conclusiones</a>
+          <a href="#bibliografia" class="toc-link">5. Bibliografía</a>
+        </nav>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>Universidad Católica de Colombia &copy; 2025 | Actividad Individual de Data Warehouse</p>
+  </footer>
+
+</body>
+</html>

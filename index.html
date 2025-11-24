@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Manual de Usuario para Eclipse BIRT Project – Actividad Individual Unidad 5 Herramientas de Implementación Data Warehouse">
-  <meta name="author" content="Tu Nombre">
+  <meta name="author" content="Cristian Andrés Sierra Páez">
   <title>Manual de Usuario – Eclipse BIRT Project | Data Warehouse</title>
 
   <!-- Fuentes y Estilos -->
@@ -177,7 +177,7 @@
 
   <div class="container">
     <main class="blog-post" role="main">
-      <!-- Sección Presentación -->
+      <!-- Presentación -->
       <section id="presentacion" aria-labelledby="titulo-presentacion">
         <h3 id="titulo-presentacion" style="margin-top: 0;">Presentación</h3>
         <p>Este blog ha sido elaborado como parte de la actividad individual de la Unidad 5. Su propósito es ofrecer un manual técnico y funcional sobre la herramienta <strong>Eclipse BIRT Project</strong>, esencial para la implementación de estrategias de inteligencia de negocio (BI) y de Data Warehouse en entornos organizacionales.</p>
@@ -186,7 +186,7 @@
       <!-- Introducción -->
       <section id="introduccion" aria-labelledby="titulo-introduccion">
         <h2><i class="fa-solid fa-book-open"></i> Introducción</h2>
-        <p>En el ámbito del Data Warehouse, la generación de informes es el paso clave en que los datos procesados se transforman en información visible y útil para la toma de decisiones. Existen diversas herramientas en el mercado —por ejemplo, <em>Crystal Reports</em>, <em>Jasper Reports</em> o <em>Dynamic Data Web</em>—, pero en esta guía nos centramos en <strong>Eclipse BIRT Project</strong>, una solución de código abierto que se integra de forma potente con aplicaciones Java/Java EE.</p>
+        <p>En el ámbito del Data Warehouse, la generación de informes es el paso clave en que los datos procesados se transforman en información visible y útil para la toma de decisiones. Existen diferentes herramientas en el mercado —por ejemplo, <em>Crystal Reports</em>, <em>Jasper Reports</em> o <em>Dynamic Data Web</em>—, pero en esta guía nos centramos en <strong>Eclipse BIRT Project</strong>, una solución de código abierto que se integra de forma potente con aplicaciones Java/Java EE.</p>
         <p>A lo largo de este manual, exploraremos su arquitectura, funcionalidades, requisitos, configuración, tipos de informes, flujo de uso y un glosario de términos clave. El objetivo es proporcionar una referencia clara para la implementación y uso efectivo de BIRT dentro de proyectos de Data Warehouse o BI.</p>
       </section>
 
@@ -196,19 +196,19 @@
 
         <article id="descripcion" aria-labelledby="titulo-descripcion">
           <h3 id="titulo-descripcion">Descripción de la Herramienta</h3>
-          <p><strong>Eclipse BIRT (Business Intelligence and Reporting Tools)</strong> es un proyecto de código abierto de la Eclipse Foundation, orientado a proveer capacidades de informes e inteligencia de negocio para aplicaciones cliente pesado (rich clients) y web, especialmente aquellas basadas en Java/Java EE. :contentReference[oaicite:1]{index=1}</p>
-          <p>Cuenta con dos componentes principales: un diseñador visual de informes integrado en el IDE Eclipse, y un motor de ejecución (“report engine”) que puede desplegarse en aplicaciones web o servidores Java. Esta estructura permite generar informes que combinan datos, tablas, gráficos y exportaciones en múltiples formatos. :contentReference[oaicite:2]{index=2}</p>
+          <p><strong>Eclipse BIRT (Business Intelligence and Reporting Tools)</strong> es un proyecto de código abierto de la Eclipse Foundation, orientado a proveer capacidades de informes e inteligencia de negocio para aplicaciones cliente pesado (rich clients) y web, especialmente aquellas basadas en Java/Java EE. <a href="https://eclipse-birt.github.io/birt-website/docs/what-is-birt/" target="_blank" rel="noopener">[1]</a></p>
+          <p>Cuenta con dos componentes principales: un diseñador visual de informes integrado en el IDE Eclipse, y un motor de ejecución (“report engine”) que puede desplegarse en aplicaciones web o servidores Java. Esta estructura permite generar informes que combinan datos, tablas, gráficos y exportaciones en múltiples formatos. <a href="https://projects.eclipse.org/projects/technology.birt" target="_blank" rel="noopener">[2]</a></p>
         </article>
 
         <article id="funcionalidades" aria-labelledby="titulo-funcionalidades">
           <h3 id="titulo-funcionalidades">Funcionalidades Principales</h3>
           <p>Entre las capacidades más destacadas de BIRT se encuentran:</p>
           <ul class="check-list">
-            <li><strong>Diseño visual “arrastrar-soltar”</strong> de tablas, gráficos, listas, crosstabs y documentos. :contentReference[oaicite:3]{index=3}</li>
-            <li><strong>Acceso a múltiples fuentes de datos</strong>: JDBC, archivos planos, web services, XML, POJOs, etc. :contentReference[oaicite:4]{index=4}</li>
-            <li><strong>Vista previa y exportación</strong> de informes en formatos como HTML, PDF, XLS/XLSX, DOC, PPT. :contentReference[oaicite:5]{index=5}</li>
-            <li><strong>Reutilización de componentes</strong> a través de librerías (*.rptlibrary) y plantillas, que facilitan consistencia y mantenimiento. :contentReference[oaicite:6]{index=6}</li>
-            <li><strong>Integración con aplicaciones Java/Java EE</strong>, permitiendo la generación programática de informes desde el backend. :contentReference[oaicite:7]{index=7}</li>
+            <li><strong>Diseño visual “arrastrar-soltar”</strong> de tablas, gráficos, listas, crosstabs y documentos. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[3]</a></li>
+            <li><strong>Acceso a múltiples fuentes de datos</strong>: JDBC, archivos planos, web services, XML, POJOs, etc. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[4]</a></li>
+            <li><strong>Vista previa y exportación</strong> de informes en formatos como HTML, PDF, XLS/XLSX, DOC, PPT. <a href="https://www.ibm.com/docs/en/taddm/7.3.0?topic=birt-overview-reporting" target="_blank" rel="noopener">[5]</a></li>
+            <li><strong>Reutilización de componentes</strong> a través de librerías (*.rptlibrary) y plantillas, que facilitan consistencia y mantenimiento.</li>
+            <li><strong>Integración con aplicaciones Java/Java EE</strong>, permitiendo la generación programática de informes desde el backend.</li>
           </ul>
         </article>
 
@@ -216,7 +216,7 @@
           <h3 id="titulo-uso">Uso de la Herramienta (Flujo de Trabajo)</h3>
           <p>El uso típico de BIRT sigue este flujo estructurado:</p>
           <ol>
-            <li><strong>Conexión de datos:</strong> usando ODA (Open Data Access) para configurar fuentes heterogéneas. :contentReference[oaicite:8]{index=8}</li>
+            <li><strong>Conexión de datos:</strong> usando ODA (Open Data Access) para configurar fuentes heterogéneas. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[4]</a></li>
             <li><strong>Transformación de datos:</strong> filtrado, agrupaciones, cálculos previos a la visualización.</li>
             <li><strong>Lógica de negocio:</strong> uso de scripts JavaScript o clases Java para lógica compleja.</li>
             <li><strong>Presentación:</strong> diseño de elementos visuales, tablas, gráficos, disposición final.</li>
@@ -228,8 +228,8 @@
           <p>Para instalar y ejecutar BIRT, considera los siguientes elementos:</p>
           <ul>
             <li><strong>Entorno Java/JDK:</strong> BIRT está basado en Java, así que debe instalarse un JDK compatible.</li>
-            <li><strong>Diseñador de Informes:</strong> puede instalarse como plugin en un IDE Eclipse existente o como aplicación independiente (RCP). :contentReference[oaicite:9]{index=9}</li>
-            <li><strong>Motor de Ejecución (Report Engine):</strong> se debe desplegar en un servidor web/Java (por ejemplo Apache Tomcat), junto con los jars de BIRT. :contentReference[oaicite:11]{index=11}</li>
+            <li><strong>Diseñador de Informes:</strong> puede instalarse como plugin en un IDE Eclipse existente o como aplicación independiente (RCP). <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[3]</a></li>
+            <li><strong>Motor de Ejecución (Report Engine):</strong> se debe desplegar en un servidor web/Java (por ejemplo Apache Tomcat), junto con los jars de BIRT. <a href="https://github.com/eclipse-birt/birt" target="_blank" rel="noopener">[6]</a></li>
             <li><strong>Fuente(s) de datos:</strong> conexión(s) configuradas para recuperar los datos necesarios.</li>
           </ul>
         </article>
@@ -241,7 +241,7 @@
             <li><strong>Informes tabulares simples:</strong> listados, facturas, documentos detallados.</li>
             <li><strong>Dashboards gráficos:</strong> barras, líneas, tortas, medidores.</li>
           </ul>
-          <p><strong>Formatos de salida:</strong> HTML, HTML paginado, PDF, XLS/XLSX, DOC, PPT y más. :contentReference[oaicite:12]{index=12}</p>
+          <p><strong>Formatos de salida:</strong> HTML, HTML paginado, PDF, XLS/XLSX, DOC, PPT y más. <a href="https://www.ibm.com/docs/en/taddm/7.3.0?topic=birt-overview-reporting" target="_blank" rel="noopener">[5]</a></p>
         </article>
 
         <article id="generar" aria-labelledby="titulo-generar">
@@ -249,7 +249,7 @@
           <p>Pasos básicos para generar un informe en BIRT:</p>
           <ol>
             <li>Abrir Eclipse y cambiar a la perspectiva “Report Design”.</li>
-            <li>Crear un nuevo proyecto de informes y archivo <code>.rptdesign</code>. :contentReference[oaicite:13]{index=13}</li>
+            <li>Crear un nuevo proyecto de informes y archivo <code>.rptdesign</code>. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[3]</a></li>
             <li>Definir la fuente de datos (Data Source) y el conjunto de datos (Data Set).</li>
             <li>Arrastrar el Data Set al lienzo de diseño para construir una tabla o gráfico.</li>
             <li>Insertar elementos desde la paleta: tablas, gráficos, etiquetas según requerimiento.</li>
@@ -264,8 +264,8 @@
       <section id="glosario" aria-labelledby="titulo-glosario">
         <h2><i class="fa-solid fa-spell-check"></i> Glosario</h2>
         <div class="glossary-box">
-          <p><span class="glossary-term">EPL (Eclipse Public License):</span> Licencia de software de código abierto bajo la cual opera BIRT. :contentReference[oaicite:14]{index=14}</p>
-          <p><span class="glossary-term">ODA (Open Data Access):</span> Marco que permite a BIRT acceder múltiples fuentes de datos heterogéneas. :contentReference[oaicite:15]{index=15}</p>
+          <p><span class="glossary-term">EPL (Eclipse Public License):</span> Licencia de software de código abierto bajo la cual opera BIRT. <a href="https://projects.eclipse.org/projects/technology.birt" target="_blank" rel="noopener">[2]</a></p>
+          <p><span class="glossary-term">ODA (Open Data Access):</span> Marco que permite a BIRT acceder múltiples fuentes de datos heterogéneas. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[4]</a></p>
           <p><span class="glossary-term">RCP (Rich Client Platform):</span> Plataforma que permite ejecutar el diseñador BIRT como aplicación de escritorio independiente.</p>
           <p><span class="glossary-term">Design Engine API (DE):</span> API de diseño usada para construir/modificar informes en BIRT.</p>
           <p><span class="glossary-term">Apache Tomcat:</span> Contenedor de servlets Java frecuentemente usado para desplegar el visor de BIRT.</p>
@@ -282,10 +282,10 @@
       <section id="bibliografia" aria-labelledby="titulo-bibliografia">
         <h2><i class="fa-solid fa-bookmark"></i> Bibliografía</h2>
         <div class="bibliography">
-          <div class="biblio-item">Eclipse Foundation. (s. f.). <em>Eclipse BIRT™ (Business Intelligence and Reporting Tools)</em>. Recuperado de <a href="https://projects.eclipse.org/projects/technology.birt" target="_blank" rel="noopener">https://projects.eclipse.org/projects/technology.birt</a></div>
-          <div class="biblio-item">IBM®. (s. f.). <em>Tips for designing model reports using BIRT</em>. Recuperado de <a href="https://www.ibm.com/docs/en/dma?topic=designs-tips-designing-model-reports" target="_blank" rel="noopener">https://www.ibm.com/docs/en/dma?topic=designs-tips-designing-model-reports</a> :contentReference[oaicite:16]{index=16}</div>
-          <div class="biblio-item">Mahmood, M. A. (s. f.). <em>Manual & guide for BIRT Eclipse Report Designer</em> [Presentación]. SlideShare. Recuperado de <a href="https://www.slideshare.net/slideshow/manual-guide-for-birt-eclipse-report-designer/11915886" target="_blank" rel="noopener">https://www.slideshare.net/slideshow/manual-guide-for-birt-eclipse-report-designer/11915886</a> :contentReference[oaicite:17]{index=17}</div>
-          <div class="biblio-item">Silberschatz, A. (2006). <em>Fundamentos de bases de datos</em> (5ª ed.). McGraw-Hill España.</div>
+          <div class="biblio-item">Eclipse Foundation. (s. f.). <em>Eclipse BIRT™ (Business Intelligence and Reporting Tools)</em>. Recuperado de https://projects.eclipse.org/projects/technology.birt</div>
+          <div would help = "divide" class="biblio-item">IBM. (s. f.). <em>Overview of BIRT reporting</em>. Recuperado de https://www.ibm.com/docs/en/taddm/7.3.0?topic=birt-overview-reporting</div>
+          <div class="biblio-item">Mahmood, M. A. (s. f.). <em>Manual & Guide for BIRT Eclipse Report Designer</em> [Presentación]. Recuperado de https://www.slideshare.net/slideshow/manual-guide-for-birt-eclipse-report-designer/11915886</div>
+          <div class="biblio-item">Silberschatz, A., Korth, H., & Sudarshan, S. (2006). <em>Fundamentos de bases de datos</em> (5.ª ed.). McGraw-Hill.</div>
           <div class="biblio-item">Universidad Católica de Colombia. (s. f.). <em>Unidad 5: Herramientas de Implementación Data Warehouse</em> [Material de curso].</div>
         </div>
       </section>

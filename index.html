@@ -7,7 +7,6 @@
   <meta name="author" content="Cristian Andrés Sierra Páez">
   <title>Manual de Usuario – Eclipse BIRT Project | Data Warehouse</title>
 
-  <!-- Fuentes y Estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -80,6 +79,12 @@
       margin-top: 30px;
       font-weight: 600;
     }
+    h4 {
+      color: #4a5568;
+      margin-top: 25px;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
     p {
       margin-bottom: 1.5em;
       text-align: justify;
@@ -101,6 +106,12 @@
       left: 0;
       color: var(--secondary-color);
     }
+    ol {
+      padding-left: 25px;
+    }
+    ol li {
+      margin-bottom: 12px;
+    }
     .glossary-box {
       background-color: #ebf8ff;
       border-left: 4px solid var(--secondary-color);
@@ -111,17 +122,31 @@
     .glossary-term {
       font-weight: bold;
       color: var(--primary-color);
+      display: block;
+      margin-top: 15px;
+    }
+    .glossary-term:first-child {
+      margin-top: 0;
     }
     .bibliography {
       background-color: #fff;
       border: 1px solid #e2e8f0;
-      padding: 20px;
+      padding: 25px 30px;
       border-radius: var(--radius);
     }
     .biblio-item {
+      margin-bottom: 1.2em;
+      text-align: left;
+      line-height: 1.6;
       padding-left: 2em;
       text-indent: -2em;
-      margin-bottom: 1em;
+    }
+    .highlight-box {
+      background-color: #f0fdf4;
+      border-left: 4px solid #10b981;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
     }
     .sidebar .widget {
       background: white;
@@ -143,6 +168,15 @@
     .toc-link:hover {
       color: var(--secondary-color);
       padding-left: 5px;
+    }
+    .code-box {
+      background-color: #f7fafc;
+      border: 1px solid #e2e8f0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #c53030;
     }
     footer {
       background-color: var(--primary-color);
@@ -177,122 +211,145 @@
 
   <div class="container">
     <main class="blog-post" role="main">
-      <!-- Presentación -->
+      
       <section id="presentacion" aria-labelledby="titulo-presentacion">
         <h3 id="titulo-presentacion" style="margin-top: 0;">Presentación</h3>
-        <p>Este blog ha sido elaborado como parte de la actividad individual de la Unidad 5. Su propósito es ofrecer un manual técnico y funcional sobre la herramienta <strong>Eclipse BIRT Project</strong>, esencial para la implementación de estrategias de inteligencia de negocio (BI) y de Data Warehouse en entornos organizacionales.</p>
+        <p>Este manual ha sido elaborado como parte de la actividad individual de la Unidad 5: Herramientas de Implementación Data Warehouse. Su propósito es ofrecer una guía técnica y funcional sobre la herramienta <strong>Eclipse BIRT Project</strong>, esencial para la implementación de estrategias de inteligencia de negocio y Data Warehouse en entornos organizacionales modernos.</p>
       </section>
 
-      <!-- Introducción -->
       <section id="introduccion" aria-labelledby="titulo-introduccion">
         <h2><i class="fa-solid fa-book-open"></i> Introducción</h2>
-        <p>En el ámbito del Data Warehouse, la generación de informes es el paso clave en que los datos procesados se transforman en información visible y útil para la toma de decisiones. Existen diferentes herramientas en el mercado —por ejemplo, <em>Crystal Reports</em>, <em>Jasper Reports</em> o <em>Dynamic Data Web</em>—, pero en esta guía nos centramos en <strong>Eclipse BIRT Project</strong>, una solución de código abierto que se integra de forma potente con aplicaciones Java/Java EE.</p>
-        <p>A lo largo de este manual, exploraremos su arquitectura, funcionalidades, requisitos, configuración, tipos de informes, flujo de uso y un glosario de términos clave. El objetivo es proporcionar una referencia clara para la implementación y uso efectivo de BIRT dentro de proyectos de Data Warehouse o BI.</p>
+        <p>En el contexto del Data Warehouse, la generación de informes representa la fase crítica donde los datos procesados se transforman en información comprensible y accionable para la toma de decisiones estratégicas. El mercado ofrece diversas soluciones de reporting como Crystal Reports, Jasper Reports y Dynamic Data Web, sin embargo, este manual se enfoca en <strong>Eclipse BIRT Project</strong>, una plataforma de código abierto que se ha consolidado como una solución robusta para aplicaciones Java y Java EE.</p>
+        <p>A lo largo de este documento exploraremos de manera detallada la arquitectura de BIRT, sus funcionalidades principales, los requisitos del sistema, procesos de configuración, tipos de informes soportados, flujos de trabajo y terminología especializada. El objetivo es proporcionar una referencia completa que facilite la implementación efectiva de BIRT en proyectos empresariales de inteligencia de negocio.</p>
       </section>
 
-      <!-- Desarrollo -->
       <section id="desarrollo" aria-labelledby="titulo-desarrollo">
-        <h2><i class="fa-solid fa-laptop-code"></i> Desarrollo de la Actividad</h2>
+        <h2><i class="fa-solid fa-laptop-code"></i> Desarrollo del Manual</h2>
 
         <article id="descripcion" aria-labelledby="titulo-descripcion">
-          <h3 id="titulo-descripcion">Descripción de la Herramienta</h3>
-          <p><strong>Eclipse BIRT (Business Intelligence and Reporting Tools)</strong> es un proyecto de código abierto de la Eclipse Foundation, orientado a proveer capacidades de informes e inteligencia de negocio para aplicaciones cliente pesado (rich clients) y web, especialmente aquellas basadas en Java/Java EE. <a href="https://eclipse-birt.github.io/birt-website/docs/what-is-birt/" target="_blank" rel="noopener">[1]</a></p>
-          <p>Cuenta con dos componentes principales: un diseñador visual de informes integrado en el IDE Eclipse, y un motor de ejecución (“report engine”) que puede desplegarse en aplicaciones web o servidores Java. Esta estructura permite generar informes que combinan datos, tablas, gráficos y exportaciones en múltiples formatos. <a href="https://projects.eclipse.org/projects/technology.birt" target="_blank" rel="noopener">[2]</a></p>
+          <h3 id="titulo-descripcion">1. Descripción de la Herramienta</h3>
+          <p><strong>Eclipse BIRT (Business Intelligence and Reporting Tools)</strong> es un proyecto de código abierto desarrollado bajo el auspicio de la Eclipse Foundation. Esta plataforma está diseñada específicamente para proveer capacidades avanzadas de generación de informes e inteligencia de negocio, orientadas tanto a aplicaciones de cliente enriquecido como a soluciones web, con especial énfasis en tecnologías Java y Java EE.</p>
+          
+          <p>La arquitectura de BIRT se fundamenta en dos componentes esenciales:</p>
+          <ul class="check-list">
+            <li><strong>Diseñador Visual de Informes:</strong> Un entorno integrado dentro del IDE Eclipse que permite la creación visual de diseños de informes mediante una interfaz de arrastrar y soltar.</li>
+            <li><strong>Motor de Ejecución (Report Engine):</strong> Un componente de runtime que puede desplegarse en aplicaciones web o servidores Java, encargado de generar los informes en tiempo de ejecución.</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong><i class="fa-solid fa-star"></i> Ventaja Principal:</strong> BIRT opera bajo la licencia Eclipse Public License (EPL), lo que garantiza su uso gratuito y permite a las organizaciones personalizarlo según sus necesidades específicas sin costos de licenciamiento.
+          </div>
         </article>
 
         <article id="funcionalidades" aria-labelledby="titulo-funcionalidades">
-          <h3 id="titulo-funcionalidades">Funcionalidades Principales</h3>
-          <p>Entre las capacidades más destacadas de BIRT se encuentran:</p>
+          <h3 id="titulo-funcionalidades">2. Funcionalidades Principales</h3>
+          <p>Eclipse BIRT ofrece un conjunto amplio de funcionalidades que lo posicionan como una solución empresarial completa para reporting y business intelligence:</p>
+          
+          <h4>2.1 Diseño Visual Interactivo</h4>
+          <p>El diseñador de BIRT proporciona una interfaz intuitiva que permite construir informes complejos sin necesidad de programación extensiva, incorporando tablas, gráficos, listas y crosstabs.</p>
+
+          <h4>2.2 Conectividad Multi-Fuente</h4>
+          <p>A través del framework Open Data Access (ODA), BIRT puede conectarse a:</p>
           <ul class="check-list">
-            <li><strong>Diseño visual “arrastrar-soltar”</strong> de tablas, gráficos, listas, crosstabs y documentos. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[3]</a></li>
-            <li><strong>Acceso a múltiples fuentes de datos</strong>: JDBC, archivos planos, web services, XML, POJOs, etc. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[4]</a></li>
-            <li><strong>Vista previa y exportación</strong> de informes en formatos como HTML, PDF, XLS/XLSX, DOC, PPT. <a href="https://www.ibm.com/docs/en/taddm/7.3.0?topic=birt-overview-reporting" target="_blank" rel="noopener">[5]</a></li>
-            <li><strong>Reutilización de componentes</strong> a través de librerías (*.rptlibrary) y plantillas, que facilitan consistencia y mantenimiento.</li>
-            <li><strong>Integración con aplicaciones Java/Java EE</strong>, permitiendo la generación programática de informes desde el backend.</li>
+            <li>Bases de datos relacionales (JDBC).</li>
+            <li>Archivos planos (CSV, TXT).</li>
+            <li>Servicios web y XML/JSON.</li>
+            <li>Objetos Java (POJOs).</li>
           </ul>
+
+          <h4>2.3 Generación y Exportación</h4>
+          <p>Soporte nativo para exportar a HTML, PDF, Excel (XLS/XLSX), Word (DOC/DOCX), PowerPoint y PostScript.</p>
         </article>
 
         <article id="uso" aria-labelledby="titulo-uso">
-          <h3 id="titulo-uso">Uso de la Herramienta (Flujo de Trabajo)</h3>
-          <p>El uso típico de BIRT sigue este flujo estructurado:</p>
+          <h3 id="titulo-uso">3. Uso de la Herramienta: Flujo de Trabajo</h3>
+          <p>El proceso de desarrollo en BIRT sigue cuatro fases principales:</p>
           <ol>
-            <li><strong>Conexión de datos:</strong> usando ODA (Open Data Access) para configurar fuentes heterogéneas. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[4]</a></li>
-            <li><strong>Transformación de datos:</strong> filtrado, agrupaciones, cálculos previos a la visualización.</li>
-            <li><strong>Lógica de negocio:</strong> uso de scripts JavaScript o clases Java para lógica compleja.</li>
-            <li><strong>Presentación:</strong> diseño de elementos visuales, tablas, gráficos, disposición final.</li>
+            <li><strong>Fase de Conexión de Datos:</strong> Configuración de Data Sources (orígenes) y creación de Data Sets (consultas) mediante ODA.</li>
+            <li><strong>Fase de Transformación:</strong> Filtrado, agrupación, ordenamiento y creación de columnas calculadas.</li>
+            <li><strong>Fase de Lógica de Negocio:</strong> Incorporación de scripts (JavaScript/Java) para validaciones complejas o formateo condicional.</li>
+            <li><strong>Fase de Presentación:</strong> Diseño visual, estilos, gráficos y maquetación final del reporte.</li>
           </ol>
         </article>
 
         <article id="requisitos" aria-labelledby="titulo-requisitos">
-          <h3 id="titulo-requisitos">Requisitos y Configuración</h3>
-          <p>Para instalar y ejecutar BIRT, considera los siguientes elementos:</p>
-          <ul>
-            <li><strong>Entorno Java/JDK:</strong> BIRT está basado en Java, así que debe instalarse un JDK compatible.</li>
-            <li><strong>Diseñador de Informes:</strong> puede instalarse como plugin en un IDE Eclipse existente o como aplicación independiente (RCP). <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[3]</a></li>
-            <li><strong>Motor de Ejecución (Report Engine):</strong> se debe desplegar en un servidor web/Java (por ejemplo Apache Tomcat), junto con los jars de BIRT. <a href="https://github.com/eclipse-birt/birt" target="_blank" rel="noopener">[6]</a></li>
-            <li><strong>Fuente(s) de datos:</strong> conexión(s) configuradas para recuperar los datos necesarios.</li>
+          <h3 id="titulo-requisitos">4. Requisitos y Configuración</h3>
+          
+          <h4>4.1 Requisitos del Sistema</h4>
+          <ul class="check-list">
+            <li><strong>Software:</strong> JDK 8+, Eclipse IDE (versión Java EE), Servidor de Aplicaciones (ej. Tomcat).</li>
+            <li><strong>Hardware:</strong> Procesador 2GHz+, 4GB RAM mínimo (8GB recomendado).</li>
           </ul>
-        </article>
 
-        <article id="tipos" aria-labelledby="titulo-tipos">
-          <h3 id="titulo-tipos">Tipos de Informes y Generación</h3>
-          <p>La herramienta permite construir distintos tipos de informes:</p>
-          <ul>
-            <li><strong>Informes tabulares simples:</strong> listados, facturas, documentos detallados.</li>
-            <li><strong>Dashboards gráficos:</strong> barras, líneas, tortas, medidores.</li>
-          </ul>
-          <p><strong>Formatos de salida:</strong> HTML, HTML paginado, PDF, XLS/XLSX, DOC, PPT y más. <a href="https://www.ibm.com/docs/en/taddm/7.3.0?topic=birt-overview-reporting" target="_blank" rel="noopener">[5]</a></p>
+          <h4>4.2 Configuración Básica</h4>
+          <p>La instalación puede realizarse vía Marketplace de Eclipse (Help → Install New Software) o descargando el paquete "All-in-One" RCP desde el sitio oficial de Eclipse BIRT.</p>
         </article>
 
         <article id="generar" aria-labelledby="titulo-generar">
-          <h3 id="titulo-generar">Cómo Generar Informes</h3>
-          <p>Pasos básicos para generar un informe en BIRT:</p>
-          <ol>
-            <li>Abrir Eclipse y cambiar a la perspectiva “Report Design”.</li>
-            <li>Crear un nuevo proyecto de informes y archivo <code>.rptdesign</code>. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[3]</a></li>
-            <li>Definir la fuente de datos (Data Source) y el conjunto de datos (Data Set).</li>
-            <li>Arrastrar el Data Set al lienzo de diseño para construir una tabla o gráfico.</li>
-            <li>Insertar elementos desde la paleta: tablas, gráficos, etiquetas según requerimiento.</li>
-            <li>Ejecutar la vista previa (“Preview”) para validar el diseño.</li>
-            <li>Exportar o desplegar el informe al formato deseado (PDF, HTML, etc.).</li>
+          <h3 id="titulo-generar">6. Cómo Generar Informes: Guía Paso a Paso</h3>
+          <p>A continuación se presenta el procedimiento detallado para crear y generar un informe básico:</p>
+
+          <h4>Paso 1 a 8: (Resumido del proceso de diseño)</h4>
+          <p>Preparación del entorno, creación del proyecto, configuración de Data Source y Data Set, diseño del layout con tablas, y aplicación de estilos.</p>
+
+          <h4>Paso 9: Vista Previa del Informe</h4>
+          <ol start="9">
+            <li>Una vez completado el diseño, ubicar la pestaña <strong>"Preview"</strong> en la parte inferior del editor central de Eclipse.</li>
+            <li>Hacer clic en ella para que el motor de BIRT compile el diseño y ejecute la consulta de datos.</li>
+            <li>Verificar que los datos se muestran correctamente y que el formato visual es el esperado.</li>
+            <li>Si se requiere probar en un navegador externo, utilizar el icono "View Report in Web Viewer" en la barra de herramientas principal.</li>
           </ol>
+
+          <h4>Paso 10: Exportación y Despliegue</h4>
+          <ol start="10">
+             <li>Para exportar, desde el visor web, hacer clic en el menú hamburguesa o icono de exportación y seleccionar el formato (PDF, Excel, etc.).</li>
+             <li>Para desplegar en producción, copiar el archivo <span class="code-box">.rptdesign</span> al directorio de reportes del servidor Tomcat donde se ejecuta el BIRT Runtime.</li>
+          </ol>
+        </article>
+
+        <article id="buenas-practicas" aria-labelledby="titulo-buenas-practicas">
+            <h3 id="titulo-buenas-practicas">7. Buenas Prácticas en BIRT</h3>
+            <p>Para garantizar el rendimiento y mantenibilidad de los informes:</p>
+            <ul class="check-list">
+                <li><strong>Optimización SQL:</strong> Realice filtros y agregaciones en la consulta SQL (Data Set) siempre que sea posible, en lugar de hacerlo en la capa de presentación de BIRT.</li>
+                <li><strong>Uso de Estilos y Temas:</strong> Evite aplicar estilos elemento por elemento. Use hojas de estilo o bibliotecas de temas para facilitar cambios globales.</li>
+                <li><strong>Reutilización:</strong> Implemente archivos de biblioteca (<span class="code-box">.rptlibrary</span>) para componentes comunes como cabeceras y pies de página.</li>
+            </ul>
         </article>
 
       </section>
 
-      <!-- Glosario -->
       <section id="glosario" aria-labelledby="titulo-glosario">
-        <h2><i class="fa-solid fa-spell-check"></i> Glosario</h2>
+        <h2><i class="fa-solid fa-spell-check"></i> Glosario Técnico</h2>
         <div class="glossary-box">
-          <p><span class="glossary-term">EPL (Eclipse Public License):</span> Licencia de software de código abierto bajo la cual opera BIRT. <a href="https://projects.eclipse.org/projects/technology.birt" target="_blank" rel="noopener">[2]</a></p>
-          <p><span class="glossary-term">ODA (Open Data Access):</span> Marco que permite a BIRT acceder múltiples fuentes de datos heterogéneas. <a href="https://www.eclipse.org/community/eclipse_newsletter/2015/september/article3.php" target="_blank" rel="noopener">[4]</a></p>
-          <p><span class="glossary-term">RCP (Rich Client Platform):</span> Plataforma que permite ejecutar el diseñador BIRT como aplicación de escritorio independiente.</p>
-          <p><span class="glossary-term">Design Engine API (DE):</span> API de diseño usada para construir/modificar informes en BIRT.</p>
-          <p><span class="glossary-term">Apache Tomcat:</span> Contenedor de servlets Java frecuentemente usado para desplegar el visor de BIRT.</p>
+          <span class="glossary-term">Data Source (Origen de Datos):</span> Objeto de configuración que define la conexión física a una base de datos o archivo externo.</span>
+          <span class="glossary-term">Data Set (Conjunto de Datos):</span> Definición lógica de los datos específicos a recuperar desde un Data Source (ej. una consulta SQL SELECT).</span>
+          <span class="glossary-term">EPL (Eclipse Public License):</span> Licencia de software libre utilizada por BIRT que permite modificaciones y uso comercial.</span>
+          <span class="glossary-term">JDBC (Java Database Connectivity):</span> API estándar de Java que permite a BIRT conectarse a bases de datos relacionales.</span>
+          <span class="glossary-term">ODA (Open Data Access):</span> Framework de Eclipse que permite la conectividad flexible a fuentes de datos heterogéneas.</span>
+          <span class="glossary-term">Rptdesign:</span> Extensión de archivo XML que contiene la definición completa del diseño de un informe BIRT.</span>
         </div>
       </section>
 
-      <!-- Conclusiones -->
       <section id="conclusiones" aria-labelledby="titulo-conclusiones">
         <h2><i class="fa-solid fa-lightbulb"></i> Conclusiones</h2>
-        <p>El proyecto <strong>Eclipse BIRT Project</strong> se posiciona como una herramienta clave en la fase de implementación de un Data Warehouse. Gracias a su enfoque de separación entre lógica de datos y presentación, permite a las organizaciones automatizar la generación de informes complejos de forma eficiente. Su naturaleza de código abierto y su integración con el ecosistema Java brindan ventajas frente a soluciones propietarias, permitiendo una integración profunda en los sistemas empresariales existentes para respaldar la toma de decisiones basada en datos.</p>
+        <p>El proyecto <strong>Eclipse BIRT</strong> se establece como una pieza fundamental en la arquitectura de soluciones de Data Warehouse modernas. Su capacidad para cerrar la brecha entre los datos crudos almacenados y la información visual necesaria para la gerencia lo convierte en una herramienta indispensable.</p>
+        <p>La flexibilidad de su arquitectura, que separa claramente el diseño de la ejecución, junto con su naturaleza de código abierto, permite a las empresas implementar sistemas de reporte sofisticados sin incurrir en los altos costos de licencias propietarias, asegurando al mismo tiempo escalabilidad e integración con estándares de la industria como Java EE.</p>
       </section>
 
-      <!-- Bibliografía -->
       <section id="bibliografia" aria-labelledby="titulo-bibliografia">
         <h2><i class="fa-solid fa-bookmark"></i> Bibliografía</h2>
         <div class="bibliography">
-          <div class="biblio-item">Eclipse Foundation. (s. f.). <em>Eclipse BIRT™ (Business Intelligence and Reporting Tools)</em>. Recuperado de https://projects.eclipse.org/projects/technology.birt</div>
-          <div would help = "divide" class="biblio-item">IBM. (s. f.). <em>Overview of BIRT reporting</em>. Recuperado de https://www.ibm.com/docs/en/taddm/7.3.0?topic=birt-overview-reporting</div>
-          <div class="biblio-item">Mahmood, M. A. (s. f.). <em>Manual & Guide for BIRT Eclipse Report Designer</em> [Presentación]. Recuperado de https://www.slideshare.net/slideshow/manual-guide-for-birt-eclipse-report-designer/11915886</div>
-          <div class="biblio-item">Silberschatz, A., Korth, H., & Sudarshan, S. (2006). <em>Fundamentos de bases de datos</em> (5.ª ed.). McGraw-Hill.</div>
-          <div class="biblio-item">Universidad Católica de Colombia. (s. f.). <em>Unidad 5: Herramientas de Implementación Data Warehouse</em> [Material de curso].</div>
+          <div class="biblio-item">Eclipse Foundation. (s.f.-a). <em>Eclipse BIRT™ Project Description</em>. Recuperado de https://projects.eclipse.org/projects/technology.birt</div>
+          <div class="biblio-item">Eclipse Foundation. (s.f.-b). <em>BIRT: The open source reporting project for Java</em>. https://eclipse-birt.github.io/birt-website/</div>
+          <div class="biblio-item">IBM. (s.f.). <em>Overview of BIRT reporting formats and outputs</em>. IBM Knowledge Center.</div>
+          <div class="biblio-item">Mahmood, M. A. (2012). <em>Manual & Guide for BIRT Eclipse Report Designer</em>. SlideShare.</div>
+          <div class="biblio-item">Universidad Católica de Colombia. (2025). <em>Material de Estudio Unidad 5: Herramientas de Implementación Data Warehouse</em>.</div>
         </div>
       </section>
 
     </main>
 
-    <!-- Sidebar de Navegación -->
     <aside class="sidebar" role="complementary">
       <div class="widget">
         <h3 style="margin-top:0; border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px;">Tabla de Contenido</h3>
@@ -302,10 +359,10 @@
           <a href="#desarrollo" class="toc-link">2. Desarrollo</a>
             <a href="#descripcion" class="toc-link" style="margin-left: 15px;">• Descripción</a>
             <a href="#funcionalidades" class="toc-link" style="margin-left: 15px;">• Funcionalidades</a>
-            <a href="#uso" class="toc-link" style="margin-left: 15px;">• Uso y Flujo</a>
-            <a href="#requisitos" class="toc-link" style="margin-left: 15px;">• Requisitos y Configuración</a>
-            <a href="#tipos" class="toc-link" style="margin-left: 15px;">• Tipos de Informes</a>
-            <a href="#generar" class="toc-link" style="margin-left: 15px;">• Cómo Generar</a>
+            <a href="#uso" class="toc-link" style="margin-left: 15px;">• Flujo de Trabajo</a>
+            <a href="#requisitos" class="toc-link" style="margin-left: 15px;">• Requisitos</a>
+            <a href="#generar" class="toc-link" style="margin-left: 15px;">• Generar Informes</a>
+            <a href="#buenas-practicas" class="toc-link" style="margin-left: 15px;">• Buenas Prácticas</a>
           <a href="#glosario" class="toc-link">3. Glosario</a>
           <a href="#conclusiones" class="toc-link">4. Conclusiones</a>
           <a href="#bibliografia" class="toc-link">5. Bibliografía</a>
